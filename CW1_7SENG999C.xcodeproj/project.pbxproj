@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE0ABDEF2A7417A100E50947 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDEE2A7417A100E50947 /* Savings.storyboard */; };
 		FE0ABDF12A7417D300E50947 /* TabView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDF02A7417D300E50947 /* TabView.storyboard */; };
 		FE0ABDF32A7418BE00E50947 /* Mortgage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */; };
 		FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB5C2A735F740010F866 /* AppDelegate.swift */; };
@@ -22,10 +21,10 @@
 		FEDB8CF12A74216D00983670 /* FAQ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF02A74216D00983670 /* FAQ.storyboard */; };
 		FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF42A742D8200983670 /* Loans.storyboard */; };
 		FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8CF62A742DA100983670 /* LoanViewController.swift */; };
+		FEDB8CF92A744EAB00983670 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF82A744EAB00983670 /* Savings.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE0ABDEE2A7417A100E50947 /* Savings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Savings.storyboard; sourceTree = "<group>"; };
 		FE0ABDF02A7417D300E50947 /* TabView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabView.storyboard; sourceTree = "<group>"; };
 		FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mortgage.storyboard; sourceTree = "<group>"; };
 		FE48CB592A735F740010F866 /* CW1_7SENG999C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CW1_7SENG999C.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +41,7 @@
 		FEDB8CF02A74216D00983670 /* FAQ.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQ.storyboard; sourceTree = "<group>"; };
 		FEDB8CF42A742D8200983670 /* Loans.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loans.storyboard; sourceTree = "<group>"; };
 		FEDB8CF62A742DA100983670 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
+		FEDB8CF82A744EAB00983670 /* Savings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Savings.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +60,11 @@
 			children = (
 				FE48CB672A735F750010F866 /* LaunchScreen.storyboard */,
 				FE48CB622A735F740010F866 /* Main.storyboard */,
-				FE0ABDEE2A7417A100E50947 /* Savings.storyboard */,
 				FE0ABDF02A7417D300E50947 /* TabView.storyboard */,
 				FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */,
 				FEDB8CF02A74216D00983670 /* FAQ.storyboard */,
 				FEDB8CF42A742D8200983670 /* Loans.storyboard */,
+				FEDB8CF82A744EAB00983670 /* Savings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -168,11 +168,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0ABDEF2A7417A100E50947 /* Savings.storyboard in Resources */,
 				FE0ABDF12A7417D300E50947 /* TabView.storyboard in Resources */,
 				FE48CB692A735F750010F866 /* LaunchScreen.storyboard in Resources */,
 				FE48CB662A735F750010F866 /* Assets.xcassets in Resources */,
 				FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */,
+				FEDB8CF92A744EAB00983670 /* Savings.storyboard in Resources */,
 				FEDB8CF12A74216D00983670 /* FAQ.storyboard in Resources */,
 				FE0ABDF32A7418BE00E50947 /* Mortgage.storyboard in Resources */,
 				FE48CB642A735F740010F866 /* Main.storyboard in Resources */,
