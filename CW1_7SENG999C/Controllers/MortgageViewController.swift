@@ -7,14 +7,44 @@
 
 import UIKit
 
-class MortgageViewController: UIViewController {
+class MortgageViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var loanAmtTxtField: UITextField!
+    @IBOutlet weak var interestTxtField: UITextField!
+    @IBOutlet weak var paymentTxtField: UITextField!
+    @IBOutlet weak var noOfYearsTxtField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        loanAmtTxtField.keyboardType = .decimalPad
+        interestTxtField.keyboardType = .decimalPad
+        paymentTxtField.keyboardType = .decimalPad
+        noOfYearsTxtField.keyboardType = .decimalPad
+        
+        loanAmtTxtField.delegate = self
+        interestTxtField.delegate = self
+        paymentTxtField.delegate = self
+        noOfYearsTxtField.delegate = self
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString txtVal: String) -> Bool {
+        if textField.keyboardType == .decimalPad {
+            if txtVal == "." {
+                if textField.text?.contains(".") ?? false {
+                    return false
+                }
+            }else if(txtVal != ""){
+                let splitByDecimal = textField.text?.split(separator: ".")
+                if let splitByDecimalList = splitByDecimal{
+                    if(splitByDecimalList.count > 1 && splitByDecimalList[1].count >= 2){
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
 
     /*
     // MARK: - Navigation
