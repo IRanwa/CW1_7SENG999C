@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5eL-Jt-21A">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CW1_7SENG999C" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SBW-Lh-xGe">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="898"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="lvk-Z3-wlI">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60Z-Bi-slT">
+                                                <rect key="frame" x="0.0" y="0.0" width="430" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finance Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbj-U4-oJQ">
+                                                        <rect key="frame" x="125.00000000000001" y="60.333333333333336" width="180.33333333333337" height="24.666666666666664"/>
+                                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="22"/>
+                                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="CC1-vX-YtU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Nbj-U4-oJQ" secondAttribute="bottom" constant="15" id="RTH-Go-fsy"/>
+                                                    <constraint firstAttribute="height" constant="100" id="vlk-ce-KuK"/>
+                                                    <constraint firstItem="Nbj-U4-oJQ" firstAttribute="centerX" secondItem="60Z-Bi-slT" secondAttribute="centerX" id="xt2-b9-hMt"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-RY-0Qz">
+                                        <rect key="frame" x="0.0" y="125" width="430" height="215"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qKm-Ub-UfM">
+                                                <rect key="frame" x="0.0" y="0.0" width="430" height="100"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loan" translatesAutoresizingMaskIntoConstraints="NO" id="4j7-Oj-z0U">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="100"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="42z-C4-8ga" appends="YES" id="65I-Sr-cO1"/>
+                                                        </connections>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mortgage" translatesAutoresizingMaskIntoConstraints="NO" id="yWU-Eb-u6f">
+                                                        <rect key="frame" x="220" y="0.0" width="210" height="100"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="EZ3-bE-l0t" appends="YES" id="HIg-at-2Tz"/>
+                                                        </connections>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="F1Q-DS-2zJ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dfs-yn-EKL">
+                                                <rect key="frame" x="0.0" y="115" width="430" height="100"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="savings" translatesAutoresizingMaskIntoConstraints="NO" id="fhg-5P-FvA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="100"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="bkN-my-HD4" appends="YES" id="T9M-Uj-LLO"/>
+                                                        </connections>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-wj-tPy">
+                                                        <rect key="frame" x="220" y="0.0" width="210" height="100"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="A9z-uG-nTq" appends="YES" id="jp1-Vk-xY8"/>
+                                                        </connections>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="7VL-g1-BAo"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="215" id="9K3-uR-k7n"/>
+                                            <constraint firstAttribute="height" constant="215" id="F8k-UY-wbS"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cJJ-oj-6OK">
+                                        <rect key="frame" x="0.0" y="365" width="430" height="533"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lvk-Z3-wlI" firstAttribute="top" secondItem="SBW-Lh-xGe" secondAttribute="top" id="DJa-vJ-vY7"/>
+                                    <constraint firstItem="fB6-RY-0Qz" firstAttribute="top" secondItem="lvk-Z3-wlI" secondAttribute="bottom" constant="15" id="KVs-XY-zcI"/>
+                                    <constraint firstItem="lvk-Z3-wlI" firstAttribute="leading" secondItem="SBW-Lh-xGe" secondAttribute="leading" id="TPk-AS-af6"/>
+                                    <constraint firstItem="cJJ-oj-6OK" firstAttribute="leading" secondItem="SBW-Lh-xGe" secondAttribute="leading" id="UgI-aL-yVe"/>
+                                    <constraint firstAttribute="trailing" secondItem="lvk-Z3-wlI" secondAttribute="trailing" id="d86-kV-1Lm"/>
+                                    <constraint firstAttribute="bottom" secondItem="cJJ-oj-6OK" secondAttribute="bottom" id="dZ7-cN-PTL"/>
+                                    <constraint firstAttribute="trailing" secondItem="fB6-RY-0Qz" secondAttribute="trailing" constant="15" id="kcw-zC-8aF"/>
+                                    <constraint firstAttribute="trailing" secondItem="cJJ-oj-6OK" secondAttribute="trailing" id="qHr-Cc-fte"/>
+                                    <constraint firstItem="fB6-RY-0Qz" firstAttribute="leading" secondItem="SBW-Lh-xGe" secondAttribute="leading" constant="15" id="yR6-Jb-eJb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SBW-Lh-xGe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E2d-iI-GTE"/>
+                            <constraint firstAttribute="trailing" secondItem="SBW-Lh-xGe" secondAttribute="trailing" id="hOJ-oc-taa"/>
+                            <constraint firstItem="SBW-Lh-xGe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vN7-CR-2jx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SBW-Lh-xGe" secondAttribute="bottom" id="ydc-Un-3d2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="V6Q-0k-ddt"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="compoundLoanSavingImg" destination="4j7-Oj-z0U" id="VHL-Sb-pZj"/>
+                        <outlet property="helpImg" destination="KfW-wj-tPy" id="sFE-F6-4Ky"/>
+                        <outlet property="mortgageImg" destination="yWU-Eb-u6f" id="Wum-7K-IbB"/>
+                        <outlet property="savingsImg" destination="fhg-5P-FvA" id="zoh-6I-hPM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EZ3-bE-l0t" userLabel="Mortgage Tap Gesture Recognizer">
+                    <connections>
+                        <segue destination="ZNR-DE-RwU" kind="show" identifier="Mortgage" id="Abw-xK-KDs"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="42z-C4-8ga" userLabel="Compound Loan and Saving Tap Gesture Recognizer">
+                    <connections>
+                        <segue destination="ZNR-DE-RwU" kind="show" identifier="Loans" id="u55-IM-VJv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bkN-my-HD4" userLabel="Savings Tap Gesture Recognizer">
+                    <connections>
+                        <segue destination="ZNR-DE-RwU" kind="show" identifier="Savings" id="sLi-jg-d4Q"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="A9z-uG-nTq" userLabel="Help Tap Gesture Recognizer">
+                    <connections>
+                        <segue destination="CJt-Yx-nQw" kind="showDetail" identifier="Help" id="AHx-3f-4VX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="916.74418604651157" y="3.8626609442060089"/>
+        </scene>
+        <!--TabView-->
+        <scene sceneID="yKW-xl-x6Z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabView" id="ZNR-DE-RwU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LC8-b2-b6A"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qsf-8b-QwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="5"/>
+        </scene>
+        <!--FAQ-->
+        <scene sceneID="7GC-L9-Iys">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FAQ" id="CJt-Yx-nQw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FDj-ED-CWH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTE-vo-FyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450" y="-225"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="va4-oF-gDk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5eL-Jt-21A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ney-so-B2W">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hlJ-PJ-6LB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYg-sF-Kpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8.3969465648854964" y="4.9295774647887329"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="u55-IM-VJv"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="help" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="loan" width="128" height="128"/>
+        <image name="mortgage" width="122.8795166015625" height="122.8795166015625"/>
+        <image name="savings" width="170.66667175292969" height="170.66667175292969"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

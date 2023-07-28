@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jxd-8S-qAu">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="Ly2-ef-aCG">
+            <objects>
+                <tabBarController id="Jxd-8S-qAu" customClass="TabBarViewController" customModule="CW1_7SENG999C" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0sC-KI-90c">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="selectedImageTintColor" systemColor="systemMintColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="uzB-20-tSZ" kind="relationship" relationship="viewControllers" id="FhV-Hb-T4Q"/>
+                        <segue destination="q1Y-3G-AQq" kind="relationship" relationship="viewControllers" id="hnf-zs-E2W"/>
+                        <segue destination="Mb5-cm-INW" kind="relationship" relationship="viewControllers" id="pzN-Hp-VPK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fgl-IF-XB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2555" y="-942"/>
+        </scene>
+        <!--Savings-->
+        <scene sceneID="bRA-TV-F7A">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Savings" id="Mb5-cm-INW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="T72-7b-DVX"/>
+                    <navigationItem key="navigationItem" id="smB-YO-mfd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOH-uJ-hfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1815" y="-1068"/>
+        </scene>
+        <!--Mortgage-->
+        <scene sceneID="7T7-J0-Dae">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mortgage" id="q1Y-3G-AQq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zy6-Dx-Kve"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ZM-K2-E4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1865" y="-1122"/>
+        </scene>
+        <!--Loans-->
+        <scene sceneID="k7V-b0-NQz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Loans" id="uzB-20-tSZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="IW6-vT-K0O"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJx-Eg-m1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1882" y="-1176"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

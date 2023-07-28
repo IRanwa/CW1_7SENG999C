@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE0ABDEF2A7417A100E50947 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDEE2A7417A100E50947 /* Savings.storyboard */; };
+		FE0ABDF12A7417D300E50947 /* TabView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDF02A7417D300E50947 /* TabView.storyboard */; };
+		FE0ABDF32A7418BE00E50947 /* Mortgage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */; };
 		FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB5C2A735F740010F866 /* AppDelegate.swift */; };
 		FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB5E2A735F740010F866 /* SceneDelegate.swift */; };
 		FE48CB612A735F740010F866 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB602A735F740010F866 /* ViewController.swift */; };
 		FE48CB642A735F740010F866 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE48CB622A735F740010F866 /* Main.storyboard */; };
 		FE48CB662A735F750010F866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE48CB652A735F750010F866 /* Assets.xcassets */; };
 		FE48CB692A735F750010F866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE48CB672A735F750010F866 /* LaunchScreen.storyboard */; };
+		FE686D502A741AEA00DE3A76 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D4F2A741AEA00DE3A76 /* SavingsViewController.swift */; };
+		FE686D522A741AF700DE3A76 /* MortgageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D512A741AF700DE3A76 /* MortgageViewController.swift */; };
+		FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D552A741C5600DE3A76 /* TabBarViewController.swift */; };
+		FEDB8CF12A74216D00983670 /* FAQ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF02A74216D00983670 /* FAQ.storyboard */; };
+		FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF42A742D8200983670 /* Loans.storyboard */; };
+		FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8CF62A742DA100983670 /* LoanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE0ABDEE2A7417A100E50947 /* Savings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Savings.storyboard; sourceTree = "<group>"; };
+		FE0ABDF02A7417D300E50947 /* TabView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabView.storyboard; sourceTree = "<group>"; };
+		FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mortgage.storyboard; sourceTree = "<group>"; };
 		FE48CB592A735F740010F866 /* CW1_7SENG999C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CW1_7SENG999C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE48CB5C2A735F740010F866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE48CB5E2A735F740010F866 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +36,12 @@
 		FE48CB652A735F750010F866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE48CB682A735F750010F866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE48CB6A2A735F750010F866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE686D4F2A741AEA00DE3A76 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
+		FE686D512A741AF700DE3A76 /* MortgageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewController.swift; sourceTree = "<group>"; };
+		FE686D552A741C5600DE3A76 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FEDB8CF02A74216D00983670 /* FAQ.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQ.storyboard; sourceTree = "<group>"; };
+		FEDB8CF42A742D8200983670 /* Loans.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loans.storyboard; sourceTree = "<group>"; };
+		FEDB8CF62A742DA100983670 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +55,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE0ABDED2A74178900E50947 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FE48CB672A735F750010F866 /* LaunchScreen.storyboard */,
+				FE48CB622A735F740010F866 /* Main.storyboard */,
+				FE0ABDEE2A7417A100E50947 /* Savings.storyboard */,
+				FE0ABDF02A7417D300E50947 /* TabView.storyboard */,
+				FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */,
+				FEDB8CF02A74216D00983670 /* FAQ.storyboard */,
+				FEDB8CF42A742D8200983670 /* Loans.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		FE48CB502A735F740010F866 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +88,26 @@
 		FE48CB5B2A735F740010F866 /* CW1_7SENG999C */ = {
 			isa = PBXGroup;
 			children = (
+				FE686D4E2A741AD400DE3A76 /* Controllers */,
+				FE0ABDED2A74178900E50947 /* Storyboards */,
 				FE48CB5C2A735F740010F866 /* AppDelegate.swift */,
 				FE48CB5E2A735F740010F866 /* SceneDelegate.swift */,
-				FE48CB602A735F740010F866 /* ViewController.swift */,
-				FE48CB622A735F740010F866 /* Main.storyboard */,
 				FE48CB652A735F750010F866 /* Assets.xcassets */,
-				FE48CB672A735F750010F866 /* LaunchScreen.storyboard */,
 				FE48CB6A2A735F750010F866 /* Info.plist */,
 			);
 			path = CW1_7SENG999C;
+			sourceTree = "<group>";
+		};
+		FE686D4E2A741AD400DE3A76 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE48CB602A735F740010F866 /* ViewController.swift */,
+				FE686D4F2A741AEA00DE3A76 /* SavingsViewController.swift */,
+				FE686D512A741AF700DE3A76 /* MortgageViewController.swift */,
+				FE686D552A741C5600DE3A76 /* TabBarViewController.swift */,
+				FEDB8CF62A742DA100983670 /* LoanViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +168,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0ABDEF2A7417A100E50947 /* Savings.storyboard in Resources */,
+				FE0ABDF12A7417D300E50947 /* TabView.storyboard in Resources */,
 				FE48CB692A735F750010F866 /* LaunchScreen.storyboard in Resources */,
 				FE48CB662A735F750010F866 /* Assets.xcassets in Resources */,
+				FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */,
+				FEDB8CF12A74216D00983670 /* FAQ.storyboard in Resources */,
+				FE0ABDF32A7418BE00E50947 /* Mortgage.storyboard in Resources */,
 				FE48CB642A735F740010F866 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */,
+				FE686D522A741AF700DE3A76 /* MortgageViewController.swift in Sources */,
+				FE686D502A741AEA00DE3A76 /* SavingsViewController.swift in Sources */,
+				FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */,
 				FE48CB612A735F740010F866 /* ViewController.swift in Sources */,
 				FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */,
 				FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */,
