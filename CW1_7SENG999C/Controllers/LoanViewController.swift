@@ -9,13 +9,15 @@ import UIKit
 import CoreData
 
 class LoanViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var presentTxtField: UITextField!
     @IBOutlet weak var futureTxtField: UITextField!
     @IBOutlet weak var interestTxtField: UITextField!
     @IBOutlet weak var paymentTxtField: UITextField!
     @IBOutlet weak var noPaymentPerYearTxtField: UITextField!
     @IBOutlet weak var compoundPerYearTxtField: UITextField!
+    @IBOutlet weak var pmtStartEndSelector: UISegmentedControl!
+    @IBOutlet weak var plusMinusSelector: UISegmentedControl!
     
     var currentCompoundData : CurrentCompoundData?
     
@@ -26,10 +28,16 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         return appDelegate.compoundLoanAndSavingsContainer.viewContext;
     }
     
+    var validationFields : [String: [String]] = [
+        "presentValue": ["futureValue", "interest", "noPaymentsPerYear"],
+        "interest": ["futureValue", "presentValue", "noPaymentsPerYear"],
+        "noPaymentsPerYear": ["futureValue", "presentValue", "interest"],
+        "futureValue": ["noPaymentsPerYear", "presentValue", "interest", "payment"],
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Keyboard numbering
         presentTxtField.keyboardType = .decimalPad
         futureTxtField.keyboardType = .decimalPad
@@ -96,20 +104,39 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     @IBAction func calculateClick(_ sender: Any) {
         if let emptyFieldsList = findEmptyFields(){
             if(emptyFieldsList.count > 0){
-                if(emptyFieldsList.count == 1){
-                    switch emptyFieldsList[0]{
+                var status : Bool = false
+                for fieldName in validationFields{
+                    print(emptyFieldsList)
+                    print(fieldName)
+                    // Convert both lists to sets
+                    let set1 = Set(emptyFieldsList)
+                    let set2 = Set(fieldName.value)
+
+                    // Find elements in set2 that are not in set1
+                    let uniqueElementsInSecondList = set2.subtracting(set1)
+                    print(uniqueElementsInSecondList)
+                    if(emptyFieldsList.contains(fieldName.key) && emptyFieldsList.count <= 2 && !uniqueElementsInSecondList.isEmpty){
+                        switch emptyFieldsList[0]{
                         case "presentValue":
                             calculatePresentValue()
-                    case "futureValue":
-                            print("futureValue")
-                    case "interest":
-                            print("interest")
-                    case "payment":
-                            print("payment")
-                    default:
-                        print("Empty option invalid")
+                            status = true
+                        case "futureValue":
+                            calculateFutureValue()
+                            status = true
+                        case "interest":
+                            calculateInterestValue()
+                            status = true
+                        case "payment":
+                            calculateNoOfPaymentYears()
+                            status = true
+                        default:
+                            print("Empty option invalid")
+                        }
+                        
                     }
-                }else{
+                }
+                print(status)
+                if(!status){
                     showErrorPopup(message: "One empty field should be available to do the calculations.")
                 }
             }else{
@@ -119,17 +146,63 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     }
     
     func calculatePresentValue(){
-        print(currentCompoundData!.noPaymentsPerYear)
-        print(currentCompoundData!.compoundsPerYear)
-        print(currentCompoundData!.interest)
-        print(currentCompoundData!.futureValue)
         let a = currentCompoundData!.noPaymentsPerYear * currentCompoundData!.compoundsPerYear
         let b = (1 + ( (currentCompoundData!.interest/100) / Double(currentCompoundData!.compoundsPerYear)))
         let presentVal = currentCompoundData!.futureValue / pow(b, Double(a))
-        print(presentVal)
         presentTxtField.text = String(format: "%.2f", presentVal)
         presentTxtField.layer.borderWidth = 1
         presentTxtField.layer.borderColor = UIColor.green.cgColor
+    }
+    
+    func calculateInterestValue(){
+        let a = 1 / Double(currentCompoundData!.noPaymentsPerYear * currentCompoundData!.compoundsPerYear)
+        let b = (currentCompoundData!.futureValue / currentCompoundData!.presentValue)
+        let interestVal = ((pow(b, a) - 1) * Double(currentCompoundData!.compoundsPerYear)) * 100
+        interestTxtField.text = String(format: "%.2f", interestVal)
+        interestTxtField.layer.borderWidth = 1
+        interestTxtField.layer.borderColor = UIColor.green.cgColor
+    }
+    
+    func calculateNoOfPaymentYears()
+    {
+        let a =  log(currentCompoundData!.futureValue / currentCompoundData!.presentValue)
+        let b =   log(1 + ((currentCompoundData!.interest/100)/Double(currentCompoundData!.compoundsPerYear)))
+            * Double(currentCompoundData!.compoundsPerYear)
+        let noOfPaymetsPerYearVal = a/b
+        noPaymentPerYearTxtField.text = String(format: "%.2f", noOfPaymetsPerYearVal)
+        noPaymentPerYearTxtField.layer.borderWidth = 1
+        noPaymentPerYearTxtField.layer.borderColor = UIColor.green.cgColor
+    }
+    
+    func calculateFutureValue()
+    {
+        let a = Double(currentCompoundData!.compoundsPerYear * currentCompoundData!.noPaymentsPerYear)
+        let b =  1 + ((currentCompoundData!.interest/100)/Double(currentCompoundData!.compoundsPerYear))
+        var futureValue = pow(b,a) * currentCompoundData!.presentValue
+        
+        if(currentCompoundData!.payment > 0)
+        {
+            print(pmtStartEndSelector.selectedSegmentIndex )
+            if(pmtStartEndSelector.selectedSegmentIndex == 0)
+            {
+                futureValue += calculateStartFutureValue(a: a, b: b)
+            }
+            else
+            {
+                futureValue += calculateEndFutureValue(a: a, b: b)
+            }
+        }
+        futureTxtField.text = String(format: "%.2f", futureValue)
+        futureTxtField.layer.borderWidth = 1
+        futureTxtField.layer.borderColor = UIColor.green.cgColor
+    }
+    
+    func calculateStartFutureValue(a : Double, b : Double) -> Double{
+        return calculateEndFutureValue(a: a, b: b) * b
+    }
+    
+    func calculateEndFutureValue(a : Double, b : Double) -> Double{
+        return currentCompoundData!.payment * ( (pow(b,a) - 1)/(currentCompoundData!.interest / Double(currentCompoundData!.noPaymentsPerYear)))
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString txtVal: String) -> Bool {
@@ -148,7 +221,6 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
             }
         }
         textField.layer.borderWidth = 0
-        textFieldChangeUpdate()
         return true
     }
     
@@ -175,8 +247,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //func textFieldDidEndEditing(_ textField: UITextField) {
-    func textFieldChangeUpdate() {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         do{
             let presentVal = presentTxtField.text
             let futureVal = futureTxtField.text
@@ -224,12 +295,12 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     
     func findEmptyFields() -> [String]?{
         var status : Bool = true
-        if(currentCompoundData!.noPaymentsPerYear <= 0){
-            showErrorPopup(message: "No of payment per year field value is invalid.")
-            status = false
-            noPaymentPerYearTxtField.layer.borderColor = UIColor.red.cgColor
-            noPaymentPerYearTxtField.layer.borderWidth = 1
-        }
+//        if(currentCompoundData!.noPaymentsPerYear <= 0){
+//            showErrorPopup(message: "No of payment per year field value is invalid.")
+//            status = false
+//            noPaymentPerYearTxtField.layer.borderColor = UIColor.red.cgColor
+//            noPaymentPerYearTxtField.layer.borderWidth = 1
+//        }
         if(currentCompoundData!.compoundsPerYear <= 0){
             showErrorPopup(message: "Compounds per year field value is invalid.")
             status = false
@@ -243,8 +314,8 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         
         var emptyFieldsList : [String] = []
         if(currentCompoundData?.presentValue == 0.0){
-                emptyFieldsList.append("presentValue")
-            }
+            emptyFieldsList.append("presentValue")
+        }
         if(currentCompoundData?.futureValue == 0.0){
             emptyFieldsList.append("futureValue")
         }
@@ -254,24 +325,27 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         if(currentCompoundData?.payment == 0.0){
             emptyFieldsList.append("payment")
         }
+        if(currentCompoundData?.noPaymentsPerYear == 0){
+            emptyFieldsList.append("noPaymentsPerYear")
+        }
         return emptyFieldsList
     }
     
     func showErrorPopup(message: String) {
-            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(okAction)
-            present(alertController, animated: true, completion: nil)
-        }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
