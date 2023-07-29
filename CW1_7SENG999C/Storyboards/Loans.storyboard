@@ -43,7 +43,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8BH-sM-Bfr">
-                                        <rect key="frame" x="0.0" y="130" width="430" height="659"/>
+                                        <rect key="frame" x="0.0" y="129.99999999999997" width="430" height="489.33333333333326"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Present Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUG-hU-Ehf">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="15"/>
@@ -79,7 +79,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4D-Ry-pUq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest ( % )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4D-Ry-pUq">
                                                 <rect key="frame" x="0.0" y="130" width="430" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="pNT-5q-hgF"/>
@@ -147,40 +147,59 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Made At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-ju-Mes">
+                                                <rect key="frame" x="0.0" y="390" width="430" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="Une-WW-GWs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="right" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BSf-Qe-A3f">
-                                                <rect key="frame" x="0.0" y="390" width="430" height="30"/>
+                                                <rect key="frame" x="0.0" y="415" width="430" height="30"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-7B-xUy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
-                                                    </switch>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YS4-ce-aba">
-                                                        <rect key="frame" x="59" y="0.0" width="371" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2pb-pu-R8c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="430" height="31"/>
+                                                        <segments>
+                                                            <segment title="Start"/>
+                                                            <segment title="End"/>
+                                                        </segments>
+                                                    </segmentedControl>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Y7E-xX-DFC"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWk-KH-NRT">
-                                                <rect key="frame" x="0.0" y="430" width="430" height="229"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Calculate">
-                                                    <color key="baseBackgroundColor" red="0.1450980392" green="0.71764705880000002" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </buttonConfiguration>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WAd-k7-GOs">
+                                                <rect key="frame" x="0.0" y="455" width="430" height="34.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWk-KH-NRT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Calculate">
+                                                            <color key="baseBackgroundColor" red="0.1450980392" green="0.71764705880000002" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="calculateClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OGN-Tx-2vT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsX-TW-nJA">
+                                                        <rect key="frame" x="220" y="0.0" width="210" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Reset">
+                                                            <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="resetClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vsp-zW-UtU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="wWk-KH-NRT" firstAttribute="top" secondItem="BSf-Qe-A3f" secondAttribute="bottom" constant="15" id="4jq-3J-fn1"/>
-                                            <constraint firstAttribute="trailing" secondItem="wWk-KH-NRT" secondAttribute="trailing" constant="15" id="Uxh-Mx-PZf"/>
-                                            <constraint firstAttribute="bottom" secondItem="wWk-KH-NRT" secondAttribute="bottom" constant="15" id="grG-kF-eN8"/>
-                                            <constraint firstItem="wWk-KH-NRT" firstAttribute="leading" secondItem="8BH-sM-Bfr" secondAttribute="leading" constant="15" id="wIr-TO-5ll"/>
-                                        </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQz-8E-dQj">
-                                        <rect key="frame" x="0.0" y="799" width="430" height="50"/>
+                                        <rect key="frame" x="0.0" y="629.33333333333337" width="430" height="219.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -231,6 +250,9 @@
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

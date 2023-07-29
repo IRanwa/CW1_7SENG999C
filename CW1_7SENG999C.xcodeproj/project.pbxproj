@@ -22,6 +22,9 @@
 		FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF42A742D8200983670 /* Loans.storyboard */; };
 		FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8CF62A742DA100983670 /* LoanViewController.swift */; };
 		FEDB8CF92A744EAB00983670 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF82A744EAB00983670 /* Savings.storyboard */; };
+		FEDB8D172A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */; };
+		FEDB8D222A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8D202A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift */; };
+		FEDB8D232A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8D212A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		FEDB8CF42A742D8200983670 /* Loans.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loans.storyboard; sourceTree = "<group>"; };
 		FEDB8CF62A742DA100983670 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
 		FEDB8CF82A744EAB00983670 /* Savings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Savings.storyboard; sourceTree = "<group>"; };
+		FEDB8D162A74852900983670 /* CompoundLoanAndSavings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompoundLoanAndSavings.xcdatamodel; sourceTree = "<group>"; };
+		FEDB8D202A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCompoundData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FEDB8D212A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCompoundData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 		FE48CB502A735F740010F866 = {
 			isa = PBXGroup;
 			children = (
+				FEDB8D202A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift */,
+				FEDB8D212A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift */,
+				FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */,
 				FE48CB5B2A735F740010F866 /* CW1_7SENG999C */,
 				FE48CB5A2A735F740010F866 /* Products */,
 			);
@@ -186,12 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDB8D172A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld in Sources */,
 				FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */,
 				FE686D522A741AF700DE3A76 /* MortgageViewController.swift in Sources */,
 				FE686D502A741AEA00DE3A76 /* SavingsViewController.swift in Sources */,
+				FEDB8D222A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift in Sources */,
 				FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */,
 				FE48CB612A735F740010F866 /* ViewController.swift in Sources */,
 				FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */,
+				FEDB8D232A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift in Sources */,
 				FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +420,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FEDB8D162A74852900983670 /* CompoundLoanAndSavings.xcdatamodel */,
+			);
+			currentVersion = FEDB8D162A74852900983670 /* CompoundLoanAndSavings.xcdatamodel */;
+			path = CompoundLoanAndSavings.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE48CB512A735F740010F866 /* Project object */;
 }
