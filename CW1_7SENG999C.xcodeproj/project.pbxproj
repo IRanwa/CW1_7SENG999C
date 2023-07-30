@@ -20,12 +20,16 @@
 		FE1840B62A76B491004B97FC /* CurrentSavings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1840B42A76B491004B97FC /* CurrentSavings+CoreDataProperties.swift */; };
 		FE1840B92A76B5AD004B97FC /* SavingsHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1840B72A76B5AD004B97FC /* SavingsHistory+CoreDataClass.swift */; };
 		FE1840BA2A76B5AD004B97FC /* SavingsHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1840B82A76B5AD004B97FC /* SavingsHistory+CoreDataProperties.swift */; };
+		FE1840BE2A76D263004B97FC /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1840BD2A76D263004B97FC /* FAQViewController.swift */; };
 		FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB5C2A735F740010F866 /* AppDelegate.swift */; };
 		FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB5E2A735F740010F866 /* SceneDelegate.swift */; };
 		FE48CB612A735F740010F866 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB602A735F740010F866 /* ViewController.swift */; };
 		FE48CB642A735F740010F866 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE48CB622A735F740010F866 /* Main.storyboard */; };
 		FE48CB662A735F750010F866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE48CB652A735F750010F866 /* Assets.xcassets */; };
 		FE48CB692A735F750010F866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE48CB672A735F750010F866 /* LaunchScreen.storyboard */; };
+		FE62D6212A76D81A0017B817 /* SavingsHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE62D6202A76D81A0017B817 /* SavingsHelpViewController.swift */; };
+		FE62D6252A76DD4A0017B817 /* MortgageHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE62D6242A76DD4A0017B817 /* MortgageHelpViewController.swift */; };
+		FE62D6272A76DD8B0017B817 /* LoanHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE62D6262A76DD8B0017B817 /* LoanHelpViewController.swift */; };
 		FE686D502A741AEA00DE3A76 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D4F2A741AEA00DE3A76 /* SavingsViewController.swift */; };
 		FE686D522A741AF700DE3A76 /* MortgageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D512A741AF700DE3A76 /* MortgageViewController.swift */; };
 		FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D552A741C5600DE3A76 /* TabBarViewController.swift */; };
@@ -58,6 +62,7 @@
 		FE1840B42A76B491004B97FC /* CurrentSavings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentSavings+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FE1840B72A76B5AD004B97FC /* SavingsHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavingsHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FE1840B82A76B5AD004B97FC /* SavingsHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavingsHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FE1840BD2A76D263004B97FC /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		FE48CB592A735F740010F866 /* CW1_7SENG999C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CW1_7SENG999C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE48CB5C2A735F740010F866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE48CB5E2A735F740010F866 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +71,9 @@
 		FE48CB652A735F750010F866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE48CB682A735F750010F866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE48CB6A2A735F750010F866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE62D6202A76D81A0017B817 /* SavingsHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsHelpViewController.swift; sourceTree = "<group>"; };
+		FE62D6242A76DD4A0017B817 /* MortgageHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageHelpViewController.swift; sourceTree = "<group>"; };
+		FE62D6262A76DD8B0017B817 /* LoanHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanHelpViewController.swift; sourceTree = "<group>"; };
 		FE686D4F2A741AEA00DE3A76 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
 		FE686D512A741AF700DE3A76 /* MortgageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewController.swift; sourceTree = "<group>"; };
 		FE686D552A741C5600DE3A76 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +160,10 @@
 				FE686D552A741C5600DE3A76 /* TabBarViewController.swift */,
 				FEDB8CF62A742DA100983670 /* LoanViewController.swift */,
 				FE751B8D2A7630380021881D /* CalculationHistoryViewController.swift */,
+				FE1840BD2A76D263004B97FC /* FAQViewController.swift */,
+				FE62D6202A76D81A0017B817 /* SavingsHelpViewController.swift */,
+				FE62D6242A76DD4A0017B817 /* MortgageHelpViewController.swift */,
+				FE62D6262A76DD8B0017B817 /* LoanHelpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1840AB2A769F16004B97FC /* MortgageHistoryTableViewCell.swift in Sources */,
+				FE62D6252A76DD4A0017B817 /* MortgageHelpViewController.swift in Sources */,
 				FEDB8D172A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld in Sources */,
 				FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */,
 				FE1840B52A76B491004B97FC /* CurrentSavings+CoreDataClass.swift in Sources */,
@@ -287,7 +300,9 @@
 				FE1840AE2A76B355004B97FC /* Savings.xcdatamodeld in Sources */,
 				FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */,
 				FE48CB612A735F740010F866 /* ViewController.swift in Sources */,
+				FE62D6272A76DD8B0017B817 /* LoanHelpViewController.swift in Sources */,
 				FEF555CF2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift in Sources */,
+				FE62D6212A76D81A0017B817 /* SavingsHelpViewController.swift in Sources */,
 				FE751B8E2A7630380021881D /* CalculationHistoryViewController.swift in Sources */,
 				FE1840BA2A76B5AD004B97FC /* SavingsHistory+CoreDataProperties.swift in Sources */,
 				FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */,
@@ -295,6 +310,7 @@
 				FE1840B62A76B491004B97FC /* CurrentSavings+CoreDataProperties.swift in Sources */,
 				FE751B912A7636E80021881D /* CompoundHstoryTableViewCell.swift in Sources */,
 				FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */,
+				FE1840BE2A76D263004B97FC /* FAQViewController.swift in Sources */,
 				FE751B932A7655DC0021881D /* DataUpdateDelegate.swift in Sources */,
 				FEF555D02A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift in Sources */,
 			);

@@ -49,7 +49,7 @@ class SavingsViewController: UIViewController, UITextFieldDelegate {
         interestTxtField.clearButtonMode = .whileEditing
         paymentTxtField.clearButtonMode = .whileEditing
         compoundsPerYearTxtField.clearButtonMode = .whileEditing
-        paymentTxtField.clearButtonMode = .whileEditing
+        paymentsPerYearTxtfField.clearButtonMode = .whileEditing
         futureValueTxtField.clearButtonMode = .whileEditing
         noOfPaymentsTotalTxtField.clearButtonMode = .whileEditing
         
