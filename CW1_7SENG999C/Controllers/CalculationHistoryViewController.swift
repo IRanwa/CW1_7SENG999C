@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class CalculationHistoryViewController: UIViewController, UITableViewDataSource {
+class CalculationHistoryViewController: UIViewController, UITableViewDataSource, DataUpdateDelegate {
 
     var context:NSManagedObjectContext?{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
@@ -25,6 +25,11 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource 
         super.viewDidLoad()
         loadCompoundHistory()
         tableView.dataSource = self
+    }
+    
+    func updateData() {
+        loadCompoundHistory()
+        tableView.reloadData()
     }
     
     func loadCompoundHistory(){
@@ -77,6 +82,18 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource 
         return cell
     }
 
+    @IBAction func resetClick(_ sender: Any) {
+        do{
+            for dataItem in compoundHistories{
+                context?.delete(dataItem)
+            }
+            try context?.save()
+        }catch{
+            print("Error in resetting the history data")
+        }
+        loadCompoundHistory()
+        tableView.reloadData()
+    }
     /*
     // MARK: - Navigation
 

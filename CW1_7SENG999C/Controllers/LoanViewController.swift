@@ -52,6 +52,20 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         noPaymentPerYearTxtField.clearButtonMode = .whileEditing
         compoundPerYearTxtField.clearButtonMode = .whileEditing
         
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        
+                let toolbar = UIToolbar()
+                toolbar.items = [doneButton]
+                toolbar.sizeToFit()
+                
+                // Assign the toolbar as the input accessory view of the text field
+                presentTxtField.inputAccessoryView = toolbar
+                futureTxtField.inputAccessoryView = toolbar
+                interestTxtField.inputAccessoryView = toolbar
+                paymentTxtField.inputAccessoryView = toolbar
+                noPaymentPerYearTxtField.inputAccessoryView = toolbar
+                compoundPerYearTxtField.inputAccessoryView = toolbar
+        
         presentTxtField.delegate = self
         futureTxtField.delegate = self
         interestTxtField.delegate = self
@@ -61,6 +75,15 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         
         loadCurrentCompoundData()
     }
+    
+    @objc func doneButtonTapped() {
+        presentTxtField.resignFirstResponder()
+        futureTxtField.resignFirstResponder()
+        interestTxtField.resignFirstResponder()
+        paymentTxtField.resignFirstResponder()
+        noPaymentPerYearTxtField.resignFirstResponder()
+        compoundPerYearTxtField.resignFirstResponder()
+        }
     
     func loadCurrentCompoundData(){
         let request = NSFetchRequest<NSFetchRequestResult>(

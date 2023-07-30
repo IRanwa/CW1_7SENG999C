@@ -7,12 +7,13 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarViewController: UITabBarController, UITabBarControllerDelegate  {
 
     var identifier : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         // Do any additional setup after loading the view.
         if let identifierVal = identifier {
             print(identifierVal)
@@ -33,12 +34,11 @@ class TabBarViewController: UITabBarController {
         }
     }
     
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("\(item)")
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let dataUpdateViewController = viewController as? DataUpdateDelegate {
+                    dataUpdateViewController.updateData()
+                }
     }
-    
-    
-
     /*
     // MARK: - Navigation
 

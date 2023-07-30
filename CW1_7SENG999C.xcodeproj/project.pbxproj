@@ -21,6 +21,7 @@
 		FE751B882A762C8A0021881D /* CalculationHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE751B872A762C8A0021881D /* CalculationHistory.storyboard */; };
 		FE751B8E2A7630380021881D /* CalculationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE751B8D2A7630380021881D /* CalculationHistoryViewController.swift */; };
 		FE751B912A7636E80021881D /* CompoundHstoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE751B902A7636E80021881D /* CompoundHstoryTableViewCell.swift */; };
+		FE751B932A7655DC0021881D /* DataUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE751B922A7655DC0021881D /* DataUpdateDelegate.swift */; };
 		FEDB8CF12A74216D00983670 /* FAQ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF02A74216D00983670 /* FAQ.storyboard */; };
 		FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF42A742D8200983670 /* Loans.storyboard */; };
 		FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8CF62A742DA100983670 /* LoanViewController.swift */; };
@@ -49,6 +50,7 @@
 		FE751B872A762C8A0021881D /* CalculationHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculationHistory.storyboard; sourceTree = "<group>"; };
 		FE751B8D2A7630380021881D /* CalculationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationHistoryViewController.swift; sourceTree = "<group>"; };
 		FE751B902A7636E80021881D /* CompoundHstoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundHstoryTableViewCell.swift; sourceTree = "<group>"; };
+		FE751B922A7655DC0021881D /* DataUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUpdateDelegate.swift; sourceTree = "<group>"; };
 		FEDB8CF02A74216D00983670 /* FAQ.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQ.storyboard; sourceTree = "<group>"; };
 		FEDB8CF42A742D8200983670 /* Loans.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loans.storyboard; sourceTree = "<group>"; };
 		FEDB8CF62A742DA100983670 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				FE0ABDED2A74178900E50947 /* Storyboards */,
 				FE48CB5C2A735F740010F866 /* AppDelegate.swift */,
 				FE48CB5E2A735F740010F866 /* SceneDelegate.swift */,
+				FE751B922A7655DC0021881D /* DataUpdateDelegate.swift */,
 				FE48CB652A735F750010F866 /* Assets.xcassets */,
 				FE48CB6A2A735F750010F866 /* Info.plist */,
 			);
@@ -248,6 +251,7 @@
 				FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */,
 				FE751B912A7636E80021881D /* CompoundHstoryTableViewCell.swift in Sources */,
 				FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */,
+				FE751B932A7655DC0021881D /* DataUpdateDelegate.swift in Sources */,
 				FEF555D02A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
