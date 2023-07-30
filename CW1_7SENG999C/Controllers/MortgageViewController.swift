@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class MortgageViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var loanAmtTxtField: UITextField!
     @IBOutlet weak var interestTxtField: UITextField!
     @IBOutlet weak var paymentTxtField: UITextField!
@@ -46,15 +46,15 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
         
-                let toolbar = UIToolbar()
-                toolbar.items = [doneButton]
-                toolbar.sizeToFit()
-                
-                // Assign the toolbar as the input accessory view of the text field
-                loanAmtTxtField.inputAccessoryView = toolbar
-                interestTxtField.inputAccessoryView = toolbar
-                paymentTxtField.inputAccessoryView = toolbar
-                noOfYearsTxtField.inputAccessoryView = toolbar
+        let toolbar = UIToolbar()
+        toolbar.items = [doneButton]
+        toolbar.sizeToFit()
+        
+        // Assign the toolbar as the input accessory view of the text field
+        loanAmtTxtField.inputAccessoryView = toolbar
+        interestTxtField.inputAccessoryView = toolbar
+        paymentTxtField.inputAccessoryView = toolbar
+        noOfYearsTxtField.inputAccessoryView = toolbar
         
         loanAmtTxtField.delegate = self
         interestTxtField.delegate = self
@@ -121,7 +121,7 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
         textField.layer.borderWidth = 0
         return true
     }
-
+    
     @IBAction func calculateClick(_ sender: Any) {
         storeTextFieldInputData()
         if let emptyFieldsList = findEmptyFields(){
@@ -173,7 +173,6 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
         let monthlyInterest = (currentMortgage!.interest/100)/12
         let a = pow((1 + monthlyInterest),Double(currentMortgage!.noOfYears * 12))
         let loanAmt = currentMortgage!.payment * (a - 1) / (monthlyInterest * a)
-        print(loanAmt)
         loanAmtTxtField.text = String(format: "%.2f", loanAmt)
         loanAmtTxtField.layer.borderWidth = 1
         loanAmtTxtField.layer.borderColor = UIColor.green.cgColor
@@ -298,13 +297,13 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

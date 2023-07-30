@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class CalculationHistoryViewController: UIViewController, UITableViewDataSource, DataUpdateDelegate {
-
+    
     var compoundContext:NSManagedObjectContext?{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
             return nil
@@ -26,7 +26,7 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     
     var compoundHistories = [CompoundDataHistory]()
     var mortgageHistories = [MortgageHistory]()
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tabSelector: UISegmentedControl!
     
@@ -83,7 +83,7 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
             return mortgageHistories.count
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tabSelector.selectedSegmentIndex == 0){
             return compoundDataBind(indexPath: indexPath)
@@ -94,7 +94,7 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     
     func compoundDataBind(indexPath : IndexPath) -> UITableViewCell{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "compoundHistoryTableCell", for: indexPath)
-        as? CompoundHstoryTableViewCell else{
+                as? CompoundHstoryTableViewCell else{
             fatalError("Compound history table cell dequeue error.")
         }
         let dataItem = compoundHistories[indexPath.row]
@@ -116,7 +116,7 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     
     func mortgageDataBind(indexPath : IndexPath) -> UITableViewCell{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mortgageHistoryTableCell", for: indexPath)
-        as? MortgageHistoryTableViewCell else{
+                as? MortgageHistoryTableViewCell else{
             fatalError("Mortgage history table cell dequeue error.")
         }
         let dataItem = mortgageHistories[indexPath.row]
@@ -127,7 +127,7 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
         cell.noOfYearsLbl.text = String( dataItem.noOfYears)
         return cell
     }
-
+    
     @IBAction func resetClick(_ sender: Any) {
         if(tabSelector.selectedSegmentIndex == 0){
             do{
@@ -155,7 +155,6 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     
     
     @IBAction func segmentOnChange(_ sender: Any) {
-        print(tabSelector.selectedSegmentIndex )
         if(tabSelector.selectedSegmentIndex == 0){
             loadCompoundHistory()
         }else{
@@ -164,13 +163,13 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
         tableView.reloadData()
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

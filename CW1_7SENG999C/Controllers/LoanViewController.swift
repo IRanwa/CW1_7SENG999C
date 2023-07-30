@@ -54,17 +54,17 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
         
-                let toolbar = UIToolbar()
-                toolbar.items = [doneButton]
-                toolbar.sizeToFit()
-                
-                // Assign the toolbar as the input accessory view of the text field
-                presentTxtField.inputAccessoryView = toolbar
-                futureTxtField.inputAccessoryView = toolbar
-                interestTxtField.inputAccessoryView = toolbar
-                paymentTxtField.inputAccessoryView = toolbar
-                noPaymentPerYearTxtField.inputAccessoryView = toolbar
-                compoundPerYearTxtField.inputAccessoryView = toolbar
+        let toolbar = UIToolbar()
+        toolbar.items = [doneButton]
+        toolbar.sizeToFit()
+        
+        // Assign the toolbar as the input accessory view of the text field
+        presentTxtField.inputAccessoryView = toolbar
+        futureTxtField.inputAccessoryView = toolbar
+        interestTxtField.inputAccessoryView = toolbar
+        paymentTxtField.inputAccessoryView = toolbar
+        noPaymentPerYearTxtField.inputAccessoryView = toolbar
+        compoundPerYearTxtField.inputAccessoryView = toolbar
         
         presentTxtField.delegate = self
         futureTxtField.delegate = self
@@ -83,7 +83,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         paymentTxtField.resignFirstResponder()
         noPaymentPerYearTxtField.resignFirstResponder()
         compoundPerYearTxtField.resignFirstResponder()
-        }
+    }
     
     func loadCurrentCompoundData(){
         let request = NSFetchRequest<NSFetchRequestResult>(
@@ -195,7 +195,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     {
         let a =  log(currentCompoundData!.futureValue / currentCompoundData!.presentValue)
         let b =   log(1 + ((currentCompoundData!.interest/100)/Double(currentCompoundData!.compoundsPerYear)))
-            * Double(currentCompoundData!.compoundsPerYear)
+        * Double(currentCompoundData!.compoundsPerYear)
         let noOfPaymetsPerYearVal = a/b
         currentCompoundData?.noPaymentsPerYear = Int32(noOfPaymetsPerYearVal)
         noPaymentPerYearTxtField.text = String(format: "%.2f", noOfPaymetsPerYearVal)
@@ -209,14 +209,14 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         let b =  1 + ((currentCompoundData!.interest/100)/Double(currentCompoundData!.compoundsPerYear))
         var futureValue = pow(b,a) * currentCompoundData!.presentValue
         
-            if(pmtStartEndSelector.selectedSegmentIndex == 0)
-            {
-                futureValue += calculateStartFutureValue(a: a, b: b)
-            }
-            else
-            {
-                futureValue += calculateEndFutureValue(a: a, b: b)
-            }
+        if(pmtStartEndSelector.selectedSegmentIndex == 0)
+        {
+            futureValue += calculateStartFutureValue(a: a, b: b)
+        }
+        else
+        {
+            futureValue += calculateEndFutureValue(a: a, b: b)
+        }
         currentCompoundData?.futureValue = futureValue
         futureTxtField.text = String(format: "%.2f", futureValue)
         futureTxtField.layer.borderWidth = 1
