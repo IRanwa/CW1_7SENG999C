@@ -335,12 +335,6 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     
     func findEmptyFields() -> [String]?{
         var status : Bool = true
-//        if(currentCompoundData!.noPaymentsPerYear <= 0){
-//            showErrorPopup(message: "No of payment per year field value is invalid.")
-//            status = false
-//            noPaymentPerYearTxtField.layer.borderColor = UIColor.red.cgColor
-//            noPaymentPerYearTxtField.layer.borderWidth = 1
-//        }
         if(currentCompoundData!.compoundsPerYear <= 0){
             showErrorPopup(message: "Compounds per year field value is invalid.")
             status = false

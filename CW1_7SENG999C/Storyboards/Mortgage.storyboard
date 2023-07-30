@@ -115,17 +115,18 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Az-JY-Z7c">
                                                 <rect key="frame" x="0.0" y="260" width="393" height="319"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="319" id="dGP-on-DH4"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Calculate">
                                                     <color key="baseBackgroundColor" red="0.1450980392" green="0.71764705880000002" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="calculateClick:" destination="o97-JH-0X5" eventType="touchUpInside" id="RlG-47-LaJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="4Az-JY-Z7c" firstAttribute="leading" secondItem="TvV-ns-Wem" secondAttribute="leading" constant="15" id="4Yb-WG-5xJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="4Az-JY-Z7c" secondAttribute="trailing" constant="15" id="JYx-Wu-1bO"/>
-                                            <constraint firstAttribute="bottom" secondItem="4Az-JY-Z7c" secondAttribute="bottom" constant="15" id="tv2-ZM-nRk"/>
-                                        </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GII-8v-LPP">
                                         <rect key="frame" x="0.0" y="719" width="393" height="50"/>

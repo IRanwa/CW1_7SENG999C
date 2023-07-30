@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		FE0ABDF12A7417D300E50947 /* TabView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDF02A7417D300E50947 /* TabView.storyboard */; };
 		FE0ABDF32A7418BE00E50947 /* Mortgage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */; };
+		FE18409D2A769339004B97FC /* Mortgage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE18409B2A769339004B97FC /* Mortgage.xcdatamodeld */; };
+		FE1840A02A76937B004B97FC /* CurrentMortgage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18409E2A76937B004B97FC /* CurrentMortgage+CoreDataClass.swift */; };
+		FE1840A12A76937B004B97FC /* CurrentMortgage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE18409F2A76937B004B97FC /* CurrentMortgage+CoreDataProperties.swift */; };
+		FE1840A82A769C36004B97FC /* MortgageHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1840A62A769C36004B97FC /* MortgageHistory+CoreDataClass.swift */; };
+		FE1840A92A769C36004B97FC /* MortgageHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1840A72A769C36004B97FC /* MortgageHistory+CoreDataProperties.swift */; };
+		FE1840AB2A769F16004B97FC /* MortgageHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1840AA2A769F16004B97FC /* MortgageHistoryTableViewCell.swift */; };
 		FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB5C2A735F740010F866 /* AppDelegate.swift */; };
 		FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB5E2A735F740010F866 /* SceneDelegate.swift */; };
 		FE48CB612A735F740010F866 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48CB602A735F740010F866 /* ViewController.swift */; };
@@ -36,6 +42,12 @@
 /* Begin PBXFileReference section */
 		FE0ABDF02A7417D300E50947 /* TabView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabView.storyboard; sourceTree = "<group>"; };
 		FE0ABDF22A7418BE00E50947 /* Mortgage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mortgage.storyboard; sourceTree = "<group>"; };
+		FE18409C2A769339004B97FC /* Mortgage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mortgage.xcdatamodel; sourceTree = "<group>"; };
+		FE18409E2A76937B004B97FC /* CurrentMortgage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentMortgage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FE18409F2A76937B004B97FC /* CurrentMortgage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentMortgage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FE1840A62A769C36004B97FC /* MortgageHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MortgageHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FE1840A72A769C36004B97FC /* MortgageHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MortgageHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FE1840AA2A769F16004B97FC /* MortgageHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		FE48CB592A735F740010F866 /* CW1_7SENG999C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CW1_7SENG999C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE48CB5C2A735F740010F866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE48CB5E2A735F740010F866 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				FE751B902A7636E80021881D /* CompoundHstoryTableViewCell.swift */,
+				FE1840AA2A769F16004B97FC /* MortgageHistoryTableViewCell.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -145,6 +158,10 @@
 		FEF555CB2A76052E002DB837 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE1840A62A769C36004B97FC /* MortgageHistory+CoreDataClass.swift */,
+				FE1840A72A769C36004B97FC /* MortgageHistory+CoreDataProperties.swift */,
+				FE18409E2A76937B004B97FC /* CurrentMortgage+CoreDataClass.swift */,
+				FE18409F2A76937B004B97FC /* CurrentMortgage+CoreDataProperties.swift */,
 				FEF555D12A76060A002DB837 /* CurrentCompoundData+CoreDataClass.swift */,
 				FEF555D22A76060A002DB837 /* CurrentCompoundData+CoreDataProperties.swift */,
 				FEF555CD2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift */,
@@ -157,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */,
+				FE18409B2A769339004B97FC /* Mortgage.xcdatamodeld */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -238,17 +256,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE1840AB2A769F16004B97FC /* MortgageHistoryTableViewCell.swift in Sources */,
 				FEDB8D172A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld in Sources */,
 				FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */,
 				FEF555D32A76060A002DB837 /* CurrentCompoundData+CoreDataClass.swift in Sources */,
+				FE18409D2A769339004B97FC /* Mortgage.xcdatamodeld in Sources */,
+				FE1840A82A769C36004B97FC /* MortgageHistory+CoreDataClass.swift in Sources */,
 				FE686D522A741AF700DE3A76 /* MortgageViewController.swift in Sources */,
+				FE1840A92A769C36004B97FC /* MortgageHistory+CoreDataProperties.swift in Sources */,
 				FEF555D42A76060A002DB837 /* CurrentCompoundData+CoreDataProperties.swift in Sources */,
 				FE686D502A741AEA00DE3A76 /* SavingsViewController.swift in Sources */,
+				FE1840A12A76937B004B97FC /* CurrentMortgage+CoreDataProperties.swift in Sources */,
 				FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */,
 				FE48CB612A735F740010F866 /* ViewController.swift in Sources */,
 				FEF555CF2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift in Sources */,
 				FE751B8E2A7630380021881D /* CalculationHistoryViewController.swift in Sources */,
 				FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */,
+				FE1840A02A76937B004B97FC /* CurrentMortgage+CoreDataClass.swift in Sources */,
 				FE751B912A7636E80021881D /* CompoundHstoryTableViewCell.swift in Sources */,
 				FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */,
 				FE751B932A7655DC0021881D /* DataUpdateDelegate.swift in Sources */,
@@ -470,6 +494,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		FE18409B2A769339004B97FC /* Mortgage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE18409C2A769339004B97FC /* Mortgage.xcdatamodel */,
+			);
+			currentVersion = FE18409C2A769339004B97FC /* Mortgage.xcdatamodel */;
+			path = Mortgage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

@@ -22,6 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
+    lazy var mortgageContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Mortgage")
+        container.loadPersistentStores(completionHandler: {
+            (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

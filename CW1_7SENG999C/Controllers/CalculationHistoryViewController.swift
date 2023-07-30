@@ -10,16 +10,25 @@ import CoreData
 
 class CalculationHistoryViewController: UIViewController, UITableViewDataSource, DataUpdateDelegate {
 
-    var context:NSManagedObjectContext?{
+    var compoundContext:NSManagedObjectContext?{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
             return nil
         }
         return appDelegate.compoundLoanAndSavingsContainer.viewContext;
     }
     
+    var mortgageContext:NSManagedObjectContext?{
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return nil
+        }
+        return appDelegate.mortgageContainer.viewContext;
+    }
+    
     var compoundHistories = [CompoundDataHistory]()
-//
+    var mortgageHistories = [MortgageHistory]()
+
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tabSelector: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +37,9 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     }
     
     func updateData() {
-        loadCompoundHistory()
+        if(tabSelector.selectedSegmentIndex == 0){
+            loadCompoundHistory()
+        }
         tableView.reloadData()
     }
     
@@ -39,9 +50,22 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
         let sort = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sort]
         do{
-            compoundHistories = try self.context?.fetch(request) as! [CompoundDataHistory]
+            compoundHistories = try self.compoundContext?.fetch(request) as! [CompoundDataHistory]
         }catch{
             print("Error in fetching compound histories")
+        }
+    }
+    
+    func loadMortgageHistory(){
+        let request = NSFetchRequest<NSFetchRequestResult>(
+            entityName: "MortgageHistory"
+        )
+        let sort = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sort]
+        do{
+            mortgageHistories = try self.mortgageContext?.fetch(request) as! [MortgageHistory]
+        }catch{
+            print("Error in fetching mortgage histories")
         }
     }
     
@@ -51,20 +75,28 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return compoundHistories.count
+        if(tabSelector.selectedSegmentIndex == 0){
+            return compoundHistories.count
+        }else{
+            return mortgageHistories.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Dequeue a reusable cell and set its content
+        
+        if(tabSelector.selectedSegmentIndex == 0){
+            return compoundDataBind(indexPath: indexPath)
+        }else{
+            return mortgageDataBind(indexPath: indexPath)
+        }
+    }
+    
+    func compoundDataBind(indexPath : IndexPath) -> UITableViewCell{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "compoundHistoryTableCell", for: indexPath)
         as? CompoundHstoryTableViewCell else{
             fatalError("Compound history table cell dequeue error.")
         }
-        // Configure the cell with the appropriate data based on the indexPath
         let dataItem = compoundHistories[indexPath.row]
-//        cell.textLabel?.text = dataItem.title
-        // Customize the cell further if needed
-        print(dataItem.interest)
         cell.dateLbl.text = dataItem.date?.formatted()
         cell.presentValueLbl.text = String(format: "%.2f", dataItem.presentValue)
         cell.futureValueLbl.text = String(format: "%.2f", dataItem.futureValue)
@@ -78,21 +110,53 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
         }else{
             cell.paymentAtLbl.text = "End"
         }
-        
+        return cell
+    }
+    
+    func mortgageDataBind(indexPath : IndexPath) -> UITableViewCell{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "mortgageHistoryTableCell", for: indexPath)
+        as? MortgageHistoryTableViewCell else{
+            fatalError("Mortgage history table cell dequeue error.")
+        }
+        let dataItem = mortgageHistories[indexPath.row]
+        cell.dateLbl.text = dataItem.date?.formatted()
+        cell.loanAmtLbl.text = String(format: "%.2f", dataItem.loanAmt)
+        cell.interestLbl.text = String(format: "%.2f", dataItem.interest)
+        cell.paymentLbl.text = String(format: "%.2f", dataItem.payment)
+        cell.noOfYearsLbl.text = String( dataItem.noOfYears)
         return cell
     }
 
     @IBAction func resetClick(_ sender: Any) {
-        do{
-            for dataItem in compoundHistories{
-                context?.delete(dataItem)
+        if(tabSelector.selectedSegmentIndex == 0){
+            do{
+                for dataItem in compoundHistories{
+                    compoundContext?.delete(dataItem)
+                }
+                try compoundContext?.save()
+            }catch{
+                print("Error in resetting the history data")
             }
-            try context?.save()
-        }catch{
-            print("Error in resetting the history data")
+            loadCompoundHistory()
+        }else{
+            do{
+                for dataItem in mortgageHistories{
+                    mortgageContext?.delete(dataItem)
+                }
+                try mortgageContext?.save()
+            }catch{
+                print("Error in resetting the mortgage data")
+            }
+            loadMortgageHistory()
         }
-        loadCompoundHistory()
         tableView.reloadData()
+    }
+    
+    
+    @IBAction func segmentOnChange(_ sender: Any) {
+        if(tabSelector.selectedSegmentIndex == 0){
+            loadCompoundHistory()
+        }
     }
     /*
     // MARK: - Navigation

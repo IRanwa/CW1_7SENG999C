@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var tabBarViewController = segue.destination as? TabBarViewController
+        let tabBarViewController = segue.destination as? TabBarViewController
         tabBarViewController?.identifier = segue.identifier
         
     }
