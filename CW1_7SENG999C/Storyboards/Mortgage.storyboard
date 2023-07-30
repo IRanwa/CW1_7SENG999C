@@ -146,7 +146,12 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TvV-ns-Wem" firstAttribute="top" secondItem="yuO-YL-Sbb" secondAttribute="bottom" constant="10" id="Zfa-db-QOn"/>
+                                    <constraint firstAttribute="trailing" secondItem="yuO-YL-Sbb" secondAttribute="trailing" id="69k-QE-jfb"/>
+                                    <constraint firstItem="TvV-ns-Wem" firstAttribute="leading" secondItem="gRW-cY-7Hs" secondAttribute="leading" constant="10" id="JqS-IS-Iqv"/>
+                                    <constraint firstItem="TvV-ns-Wem" firstAttribute="top" secondItem="yuO-YL-Sbb" secondAttribute="bottom" constant="10" id="YLx-HT-Tkv"/>
+                                    <constraint firstItem="yuO-YL-Sbb" firstAttribute="leading" secondItem="gRW-cY-7Hs" secondAttribute="leading" id="fhj-MM-yGS"/>
+                                    <constraint firstItem="yuO-YL-Sbb" firstAttribute="top" secondItem="gRW-cY-7Hs" secondAttribute="top" id="wjO-Df-RNN"/>
+                                    <constraint firstAttribute="trailing" secondItem="TvV-ns-Wem" secondAttribute="trailing" constant="10" id="zfn-rm-HLi"/>
                                 </constraints>
                             </stackView>
                         </subviews>

@@ -144,7 +144,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
                         case "interest":
                             calculateInterestValue()
                             status = true
-                        case "payment":
+                        case "noPaymentsPerYear":
                             calculateNoOfPaymentYears()
                             status = true
                         default:
@@ -176,7 +176,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         let b = (1 + ( (currentCompoundData!.interest/100) / Double(currentCompoundData!.compoundsPerYear)))
         let presentVal = currentCompoundData!.futureValue / pow(b, Double(a))
         currentCompoundData?.presentValue = presentVal
-        presentTxtField.text = String(format: "%.2f", presentVal)
+        presentTxtField.text = String(format: "%.2f", currentCompoundData!.presentValue)
         presentTxtField.layer.borderWidth = 1
         presentTxtField.layer.borderColor = UIColor.green.cgColor
     }
@@ -186,7 +186,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         let b = (currentCompoundData!.futureValue / currentCompoundData!.presentValue)
         let interestVal = ((pow(b, a) - 1) * Double(currentCompoundData!.compoundsPerYear)) * 100
         currentCompoundData?.interest = interestVal
-        interestTxtField.text = String(format: "%.2f", interestVal)
+        interestTxtField.text = String(format: "%.2f", currentCompoundData!.interest)
         interestTxtField.layer.borderWidth = 1
         interestTxtField.layer.borderColor = UIColor.green.cgColor
     }
@@ -197,8 +197,8 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         let b =   log(1 + ((currentCompoundData!.interest/100)/Double(currentCompoundData!.compoundsPerYear)))
         * Double(currentCompoundData!.compoundsPerYear)
         let noOfPaymetsPerYearVal = a/b
-        currentCompoundData?.noPaymentsPerYear = Int32(noOfPaymetsPerYearVal)
-        noPaymentPerYearTxtField.text = String(format: "%.2f", noOfPaymetsPerYearVal)
+        currentCompoundData?.noPaymentsPerYear = Int32(ceil(noOfPaymetsPerYearVal))
+        noPaymentPerYearTxtField.text = String(currentCompoundData!.noPaymentsPerYear)
         noPaymentPerYearTxtField.layer.borderWidth = 1
         noPaymentPerYearTxtField.layer.borderColor = UIColor.green.cgColor
     }
@@ -218,7 +218,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
             futureValue += calculateEndFutureValue(a: a, b: b)
         }
         currentCompoundData?.futureValue = futureValue
-        futureTxtField.text = String(format: "%.2f", futureValue)
+        futureTxtField.text = String(format: "%.2f", currentCompoundData!.futureValue)
         futureTxtField.layer.borderWidth = 1
         futureTxtField.layer.borderColor = UIColor.green.cgColor
     }

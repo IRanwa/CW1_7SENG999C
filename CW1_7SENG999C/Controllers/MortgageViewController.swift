@@ -50,7 +50,6 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
         toolbar.items = [doneButton]
         toolbar.sizeToFit()
         
-        // Assign the toolbar as the input accessory view of the text field
         loanAmtTxtField.inputAccessoryView = toolbar
         interestTxtField.inputAccessoryView = toolbar
         paymentTxtField.inputAccessoryView = toolbar
