@@ -139,26 +139,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aBe-aP-XjY">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Payment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZ2-Vm-LC1">
                                                 <rect key="frame" x="0.0" y="350" width="430" height="30"/>
-                                                <subviews>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="c3y-Mh-skq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="31"/>
-                                                        <segments>
-                                                            <segment title="-"/>
-                                                            <segment title="+"/>
-                                                        </segments>
-                                                    </segmentedControl>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Payment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZ2-Vm-LC1">
-                                                        <rect key="frame" x="65" y="0.0" width="365" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="CUE-pO-rFP"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="CUE-pO-rFP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Made At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-ju-Mes">
                                                 <rect key="frame" x="0.0" y="390" width="430" height="15"/>
                                                 <constraints>
@@ -244,7 +232,6 @@
                         <outlet property="interestTxtField" destination="2HF-YC-2ee" id="fQm-I9-ZWe"/>
                         <outlet property="noPaymentPerYearTxtField" destination="SYw-wN-4t0" id="HPb-BA-tDJ"/>
                         <outlet property="paymentTxtField" destination="sZ2-Vm-LC1" id="Ivh-zN-s9M"/>
-                        <outlet property="plusMinusSelector" destination="c3y-Mh-skq" id="IAa-MQ-ir1"/>
                         <outlet property="pmtStartEndSelector" destination="2pb-pu-R8c" id="lfA-po-heA"/>
                         <outlet property="presentTxtField" destination="J7b-t0-hkz" id="oqD-hh-P4e"/>
                     </connections>

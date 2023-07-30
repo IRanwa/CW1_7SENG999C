@@ -23,8 +23,10 @@
 		FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8CF62A742DA100983670 /* LoanViewController.swift */; };
 		FEDB8CF92A744EAB00983670 /* Savings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF82A744EAB00983670 /* Savings.storyboard */; };
 		FEDB8D172A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */; };
-		FEDB8D222A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8D202A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift */; };
-		FEDB8D232A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8D212A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift */; };
+		FEF555CF2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF555CD2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift */; };
+		FEF555D02A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF555CE2A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift */; };
+		FEF555D32A76060A002DB837 /* CurrentCompoundData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF555D12A76060A002DB837 /* CurrentCompoundData+CoreDataClass.swift */; };
+		FEF555D42A76060A002DB837 /* CurrentCompoundData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF555D22A76060A002DB837 /* CurrentCompoundData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +48,10 @@
 		FEDB8CF62A742DA100983670 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
 		FEDB8CF82A744EAB00983670 /* Savings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Savings.storyboard; sourceTree = "<group>"; };
 		FEDB8D162A74852900983670 /* CompoundLoanAndSavings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompoundLoanAndSavings.xcdatamodel; sourceTree = "<group>"; };
-		FEDB8D202A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCompoundData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FEDB8D212A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCompoundData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FEF555CD2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompoundDataHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FEF555CE2A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompoundDataHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FEF555D12A76060A002DB837 /* CurrentCompoundData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCompoundData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FEF555D22A76060A002DB837 /* CurrentCompoundData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCompoundData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +82,6 @@
 		FE48CB502A735F740010F866 = {
 			isa = PBXGroup;
 			children = (
-				FEDB8D202A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift */,
-				FEDB8D212A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift */,
-				FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */,
 				FE48CB5B2A735F740010F866 /* CW1_7SENG999C */,
 				FE48CB5A2A735F740010F866 /* Products */,
 			);
@@ -97,6 +98,8 @@
 		FE48CB5B2A735F740010F866 /* CW1_7SENG999C */ = {
 			isa = PBXGroup;
 			children = (
+				FEF555CC2A760548002DB837 /* DataModels */,
+				FEF555CB2A76052E002DB837 /* Models */,
 				FE686D4E2A741AD400DE3A76 /* Controllers */,
 				FE0ABDED2A74178900E50947 /* Storyboards */,
 				FE48CB5C2A735F740010F866 /* AppDelegate.swift */,
@@ -117,6 +120,25 @@
 				FEDB8CF62A742DA100983670 /* LoanViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FEF555CB2A76052E002DB837 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEF555D12A76060A002DB837 /* CurrentCompoundData+CoreDataClass.swift */,
+				FEF555D22A76060A002DB837 /* CurrentCompoundData+CoreDataProperties.swift */,
+				FEF555CD2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift */,
+				FEF555CE2A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FEF555CC2A760548002DB837 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				FEDB8D152A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,14 +219,16 @@
 			files = (
 				FEDB8D172A74852900983670 /* CompoundLoanAndSavings.xcdatamodeld in Sources */,
 				FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */,
+				FEF555D32A76060A002DB837 /* CurrentCompoundData+CoreDataClass.swift in Sources */,
 				FE686D522A741AF700DE3A76 /* MortgageViewController.swift in Sources */,
+				FEF555D42A76060A002DB837 /* CurrentCompoundData+CoreDataProperties.swift in Sources */,
 				FE686D502A741AEA00DE3A76 /* SavingsViewController.swift in Sources */,
-				FEDB8D222A7489AE00983670 /* CurrentCompoundData+CoreDataClass.swift in Sources */,
 				FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */,
 				FE48CB612A735F740010F866 /* ViewController.swift in Sources */,
+				FEF555CF2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift in Sources */,
 				FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */,
-				FEDB8D232A7489AE00983670 /* CurrentCompoundData+CoreDataProperties.swift in Sources */,
 				FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */,
+				FEF555D02A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

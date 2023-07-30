@@ -17,7 +17,6 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var noPaymentPerYearTxtField: UITextField!
     @IBOutlet weak var compoundPerYearTxtField: UITextField!
     @IBOutlet weak var pmtStartEndSelector: UISegmentedControl!
-    @IBOutlet weak var plusMinusSelector: UISegmentedControl!
     
     var currentCompoundData : CurrentCompoundData?
     
@@ -93,7 +92,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
                 
                 return
             }else{
-                currentCompoundData = CurrentCompoundData(presentValue: 0.0, futureValue: 0.0, interest: 0.0, payment: 0.0, noPaymentsPerYear: 0, compoundsPerYear: 0, insertIntoManagedObjectContext: context!)
+                currentCompoundData = CurrentCompoundData(presentValue: 0, futureValue: 0, interest: 0, noOfPaymentsPerYear: 0, compoundsPerYear: 0, payment: 0, paymentAt: 0, insertIntoManagedObjectContext: context!)
                 try context?.save()
             }
         }catch{
@@ -102,20 +101,15 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func calculateClick(_ sender: Any) {
+        storeTextFieldInputData()
         if let emptyFieldsList = findEmptyFields(){
             if(emptyFieldsList.count > 0){
                 var status : Bool = false
                 for fieldName in validationFields{
-                    print(emptyFieldsList)
-                    print(fieldName)
-                    // Convert both lists to sets
                     let set1 = Set(emptyFieldsList)
                     let set2 = Set(fieldName.value)
-
-                    // Find elements in set2 that are not in set1
-                    let uniqueElementsInSecondList = set2.subtracting(set1)
-                    print(uniqueElementsInSecondList)
-                    if(emptyFieldsList.contains(fieldName.key) && emptyFieldsList.count <= 2 && !uniqueElementsInSecondList.isEmpty){
+                    let elementsOnlyInSecondsList = set2.subtracting(set1)
+                    if(emptyFieldsList.contains(fieldName.key) && emptyFieldsList.count <= 2 && !elementsOnlyInSecondsList.isEmpty){
                         switch emptyFieldsList[0]{
                         case "presentValue":
                             calculatePresentValue()
@@ -132,12 +126,12 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
                         default:
                             print("Empty option invalid")
                         }
-                        
                     }
                 }
-                print(status)
                 if(!status){
                     showErrorPopup(message: "One empty field should be available to do the calculations.")
+                }else{
+                    storeCalculationHistory()
                 }
             }else{
                 showErrorPopup(message: "At least one calculation field should be empty.")
@@ -180,9 +174,6 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
         let b =  1 + ((currentCompoundData!.interest/100)/Double(currentCompoundData!.compoundsPerYear))
         var futureValue = pow(b,a) * currentCompoundData!.presentValue
         
-        if(currentCompoundData!.payment > 0)
-        {
-            print(pmtStartEndSelector.selectedSegmentIndex )
             if(pmtStartEndSelector.selectedSegmentIndex == 0)
             {
                 futureValue += calculateStartFutureValue(a: a, b: b)
@@ -191,7 +182,6 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
             {
                 futureValue += calculateEndFutureValue(a: a, b: b)
             }
-        }
         futureTxtField.text = String(format: "%.2f", futureValue)
         futureTxtField.layer.borderWidth = 1
         futureTxtField.layer.borderColor = UIColor.green.cgColor
@@ -202,7 +192,26 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     }
     
     func calculateEndFutureValue(a : Double, b : Double) -> Double{
-        return currentCompoundData!.payment * ( (pow(b,a) - 1)/(currentCompoundData!.interest / Double(currentCompoundData!.noPaymentsPerYear)))
+        return ( (pow(b,a) - 1)/((currentCompoundData!.interest/100.0) / Double(currentCompoundData!.compoundsPerYear)))
+        * currentCompoundData!.payment
+    }
+    
+    func storeCalculationHistory(){
+        do{
+            _ = CompoundDataHistory(
+                date: Date.now,
+                presentValue: currentCompoundData!.presentValue,
+                futureValue: currentCompoundData!.futureValue,
+                interest: currentCompoundData!.interest,
+                noOfPaymentsPerYear: currentCompoundData!.noPaymentsPerYear,
+                compoundsPerYear: currentCompoundData!.compoundsPerYear,
+                payment: currentCompoundData!.payment,
+                paymentAt: currentCompoundData!.paymentAt,
+                insertIntoManagedObjectContext: context!)
+            try context?.save()
+        }catch{
+            print("Error in saving calculation history")
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString txtVal: String) -> Bool {
@@ -248,6 +257,10 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        storeTextFieldInputData()
+    }
+    
+    func storeTextFieldInputData(){
         do{
             let presentVal = presentTxtField.text
             let futureVal = futureTxtField.text
