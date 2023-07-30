@@ -346,13 +346,10 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="dateLbl" destination="LAf-WA-eqe" id="dCO-fx-pUg"/>
-                                                    <outlet property="futureValueLbl" destination="Pej-LU-N8G" id="pfZ-LR-0Yc"/>
                                                     <outlet property="interestLbl" destination="Pej-LU-N8G" id="YSp-ab-qKq"/>
                                                     <outlet property="loanAmtLbl" destination="25R-jJ-JnZ" id="SeO-jx-Z0S"/>
                                                     <outlet property="noOfYearsLbl" destination="Dsv-8u-COM" id="ba2-g1-6BI"/>
-                                                    <outlet property="noPaymentsPerYearLbl" destination="Dsv-8u-COM" id="kpW-p3-IRh"/>
                                                     <outlet property="paymentLbl" destination="daW-ug-jwi" id="5D4-d6-4H3"/>
-                                                    <outlet property="presentValueLbl" destination="25R-jJ-JnZ" id="He2-hq-leC"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

@@ -39,6 +39,11 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
         paymentTxtField.keyboardType = .decimalPad
         noOfYearsTxtField.keyboardType = .decimalPad
         
+        loanAmtTxtField.clearButtonMode = .whileEditing
+        interestTxtField.clearButtonMode = .whileEditing
+        paymentTxtField.clearButtonMode = .whileEditing
+        noOfYearsTxtField.clearButtonMode = .whileEditing
+        
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
         
                 let toolbar = UIToolbar()
@@ -78,7 +83,7 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
                     paymentTxtField.text = String(format: "%.2f", paymentValue)
                 }
                 if let noOfYearsValue = currentMortgage?.noOfYears{
-                    noOfYearsTxtField.text = String(format: "%.2f", noOfYearsValue)
+                    noOfYearsTxtField.text = String(noOfYearsValue)
                 }
                 
                 return
@@ -113,6 +118,7 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        textField.layer.borderWidth = 0
         return true
     }
 
@@ -126,6 +132,7 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
                     let set2 = Set(fieldName.value)
                     let elementsOnlyInSecondsList = set2.subtracting(set1)
                     if(emptyFieldsList.contains(fieldName.key) && emptyFieldsList.count <= 2 && !elementsOnlyInSecondsList.isEmpty){
+                        resetBGWidth()
                         switch emptyFieldsList[0]{
                         case "loanAmt":
                             calculateLoanAmt()
@@ -155,10 +162,18 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func resetBGWidth(){
+        loanAmtTxtField.layer.borderWidth = 0
+        interestTxtField.layer.borderWidth = 0
+        paymentTxtField.layer.borderWidth = 0
+        noOfYearsTxtField.layer.borderWidth = 0
+    }
+    
     func calculateLoanAmt(){
         let monthlyInterest = (currentMortgage!.interest/100)/12
-        let a = pow((1 + monthlyInterest),Double(currentMortgage!.noOfYears))
-        let loanAmt = (currentMortgage!.payment * monthlyInterest * a) / (a - 1)
+        let a = pow((1 + monthlyInterest),Double(currentMortgage!.noOfYears * 12))
+        let loanAmt = currentMortgage!.payment * (a - 1) / (monthlyInterest * a)
+        print(loanAmt)
         loanAmtTxtField.text = String(format: "%.2f", loanAmt)
         loanAmtTxtField.layer.borderWidth = 1
         loanAmtTxtField.layer.borderColor = UIColor.green.cgColor
@@ -166,7 +181,7 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
     
     func calculatePayment(){
         let monthlyInterest = (currentMortgage!.interest/100)/12
-        let a = pow((1 + monthlyInterest),Double(currentMortgage!.noOfYears))
+        let a = pow((1 + monthlyInterest),Double(currentMortgage!.noOfYears * 12))
         let payment = currentMortgage!.loanAmt * (monthlyInterest * a / (a - 1))
         paymentTxtField.text = String(format: "%.2f", payment)
         paymentTxtField.layer.borderWidth = 1
@@ -176,15 +191,14 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
     func calculateNoOfYears(){
         let monthlyInterest = (currentMortgage!.interest/100)/12
         let noOfYears = (log(currentMortgage!.payment) - log(currentMortgage!.payment - currentMortgage!.loanAmt * monthlyInterest)) / log(1 + monthlyInterest)
-        noOfYearsTxtField.text = String(format: "%.2f", noOfYears)
+        noOfYearsTxtField.text = String(format: "%.2f", noOfYears/12)
         noOfYearsTxtField.layer.borderWidth = 1
         noOfYearsTxtField.layer.borderColor = UIColor.green.cgColor
     }
     
     func calculateInterest(){
-        let a = (currentMortgage!.payment / currentMortgage!.loanAmt)
-        let interest =  a / (pow((1 + a), (Double(currentMortgage!.noOfYears) - 1)))
-        interestTxtField.text = String(format: "%.2f", interest)
+        let interest = ((currentMortgage!.payment  / currentMortgage!.loanAmt ) - 1) / (pow((1 + (currentMortgage!.payment  / currentMortgage!.loanAmt)),Double(currentMortgage!.noOfYears)) - 1)
+        interestTxtField.text = String(format: "%.2f", abs(interest))
         interestTxtField.layer.borderWidth = 1
         interestTxtField.layer.borderColor = UIColor.green.cgColor
     }
@@ -199,7 +213,6 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
             let interestVal = interestTxtField.text
             let paymentVal = paymentTxtField.text
             let noOfYearsVal = noOfYearsTxtField.text
-            
             if let loanAmtStoreVal = Double(loanAmtVal!){
                 currentMortgage!.loanAmt = loanAmtStoreVal
             }else{
@@ -263,6 +276,25 @@ class MortgageViewController: UIViewController, UITextFieldDelegate {
             try context?.save()
         }catch{
             print("Error in saving calculation history")
+        }
+    }
+    
+    @IBAction func resetClick(_ sender: Any) {
+        do
+        {
+            loanAmtTxtField.text = ""
+            interestTxtField.text = ""
+            paymentTxtField.text = ""
+            noOfYearsTxtField.text = ""
+            
+            currentMortgage?.loanAmt = 0.0;
+            currentMortgage?.interest = 0.0;
+            currentMortgage?.payment = 0.0;
+            currentMortgage?.noOfYears = 0;
+            
+            try context?.save()
+        }catch{
+            print("Error in resetting the current mortgage data")
         }
     }
     /*

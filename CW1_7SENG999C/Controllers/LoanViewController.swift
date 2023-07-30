@@ -133,6 +133,7 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
                     let set2 = Set(fieldName.value)
                     let elementsOnlyInSecondsList = set2.subtracting(set1)
                     if(emptyFieldsList.contains(fieldName.key) && emptyFieldsList.count <= 2 && !elementsOnlyInSecondsList.isEmpty){
+                        resetBGWidth()
                         switch emptyFieldsList[0]{
                         case "presentValue":
                             calculatePresentValue()
@@ -160,6 +161,14 @@ class LoanViewController: UIViewController, UITextFieldDelegate {
                 showErrorPopup(message: "At least one calculation field should be empty.")
             }
         }
+    }
+    
+    func resetBGWidth(){
+        presentTxtField.layer.borderWidth = 0
+        futureTxtField.layer.borderWidth = 0
+        interestTxtField.layer.borderWidth = 0
+        paymentTxtField.layer.borderWidth = 0
+        noPaymentPerYearTxtField.layer.borderWidth = 0
     }
     
     func calculatePresentValue(){

@@ -39,6 +39,8 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     func updateData() {
         if(tabSelector.selectedSegmentIndex == 0){
             loadCompoundHistory()
+        }else{
+            loadMortgageHistory()
         }
         tableView.reloadData()
     }
@@ -83,7 +85,6 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if(tabSelector.selectedSegmentIndex == 0){
             return compoundDataBind(indexPath: indexPath)
         }else{
@@ -154,9 +155,13 @@ class CalculationHistoryViewController: UIViewController, UITableViewDataSource,
     
     
     @IBAction func segmentOnChange(_ sender: Any) {
+        print(tabSelector.selectedSegmentIndex )
         if(tabSelector.selectedSegmentIndex == 0){
             loadCompoundHistory()
+        }else{
+            loadMortgageHistory()
         }
+        tableView.reloadData()
     }
     /*
     // MARK: - Navigation
