@@ -23,6 +23,8 @@ class TabBarViewController: UITabBarController {
                     self.selectedIndex = 1
                 case "Savings":
                     self.selectedIndex = 2
+                case "CalculationHistory":
+                    self.selectedIndex = 3
                 default:
                     return
             }

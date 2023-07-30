@@ -21,6 +21,7 @@
                         <segue destination="uzB-20-tSZ" kind="relationship" relationship="viewControllers" id="FhV-Hb-T4Q"/>
                         <segue destination="q1Y-3G-AQq" kind="relationship" relationship="viewControllers" id="hnf-zs-E2W"/>
                         <segue destination="Mb5-cm-INW" kind="relationship" relationship="viewControllers" id="pzN-Hp-VPK"/>
+                        <segue destination="uN4-Yi-TGH" kind="relationship" relationship="viewControllers" id="hge-cM-D6d"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgl-IF-XB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -37,6 +38,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOH-uJ-hfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1815" y="-1068"/>
+        </scene>
+        <!--CalculationHistory-->
+        <scene sceneID="2nE-hs-yS4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CalculationHistory" id="uN4-Yi-TGH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="I8d-3X-kEk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pD6-CQ-IYn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1604" y="-1259"/>
         </scene>
         <!--Mortgage-->
         <scene sceneID="7T7-J0-Dae">

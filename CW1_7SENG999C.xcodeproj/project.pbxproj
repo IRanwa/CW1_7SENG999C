@@ -18,6 +18,9 @@
 		FE686D502A741AEA00DE3A76 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D4F2A741AEA00DE3A76 /* SavingsViewController.swift */; };
 		FE686D522A741AF700DE3A76 /* MortgageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D512A741AF700DE3A76 /* MortgageViewController.swift */; };
 		FE686D562A741C5600DE3A76 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE686D552A741C5600DE3A76 /* TabBarViewController.swift */; };
+		FE751B882A762C8A0021881D /* CalculationHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE751B872A762C8A0021881D /* CalculationHistory.storyboard */; };
+		FE751B8E2A7630380021881D /* CalculationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE751B8D2A7630380021881D /* CalculationHistoryViewController.swift */; };
+		FE751B912A7636E80021881D /* CompoundHstoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE751B902A7636E80021881D /* CompoundHstoryTableViewCell.swift */; };
 		FEDB8CF12A74216D00983670 /* FAQ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF02A74216D00983670 /* FAQ.storyboard */; };
 		FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDB8CF42A742D8200983670 /* Loans.storyboard */; };
 		FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDB8CF62A742DA100983670 /* LoanViewController.swift */; };
@@ -43,6 +46,9 @@
 		FE686D4F2A741AEA00DE3A76 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
 		FE686D512A741AF700DE3A76 /* MortgageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewController.swift; sourceTree = "<group>"; };
 		FE686D552A741C5600DE3A76 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FE751B872A762C8A0021881D /* CalculationHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalculationHistory.storyboard; sourceTree = "<group>"; };
+		FE751B8D2A7630380021881D /* CalculationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationHistoryViewController.swift; sourceTree = "<group>"; };
+		FE751B902A7636E80021881D /* CompoundHstoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundHstoryTableViewCell.swift; sourceTree = "<group>"; };
 		FEDB8CF02A74216D00983670 /* FAQ.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQ.storyboard; sourceTree = "<group>"; };
 		FEDB8CF42A742D8200983670 /* Loans.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loans.storyboard; sourceTree = "<group>"; };
 		FEDB8CF62A742DA100983670 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 				FEDB8CF02A74216D00983670 /* FAQ.storyboard */,
 				FEDB8CF42A742D8200983670 /* Loans.storyboard */,
 				FEDB8CF82A744EAB00983670 /* Savings.storyboard */,
+				FE751B872A762C8A0021881D /* CalculationHistory.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 		FE48CB5B2A735F740010F866 /* CW1_7SENG999C */ = {
 			isa = PBXGroup;
 			children = (
+				FE751B8F2A7636BD0021881D /* UIComponents */,
 				FEF555CC2A760548002DB837 /* DataModels */,
 				FEF555CB2A76052E002DB837 /* Models */,
 				FE686D4E2A741AD400DE3A76 /* Controllers */,
@@ -118,8 +126,17 @@
 				FE686D512A741AF700DE3A76 /* MortgageViewController.swift */,
 				FE686D552A741C5600DE3A76 /* TabBarViewController.swift */,
 				FEDB8CF62A742DA100983670 /* LoanViewController.swift */,
+				FE751B8D2A7630380021881D /* CalculationHistoryViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE751B8F2A7636BD0021881D /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FE751B902A7636E80021881D /* CompoundHstoryTableViewCell.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		FEF555CB2A76052E002DB837 /* Models */ = {
@@ -205,6 +222,7 @@
 				FEDB8CF52A742D8200983670 /* Loans.storyboard in Resources */,
 				FEDB8CF92A744EAB00983670 /* Savings.storyboard in Resources */,
 				FEDB8CF12A74216D00983670 /* FAQ.storyboard in Resources */,
+				FE751B882A762C8A0021881D /* CalculationHistory.storyboard in Resources */,
 				FE0ABDF32A7418BE00E50947 /* Mortgage.storyboard in Resources */,
 				FE48CB642A735F740010F866 /* Main.storyboard in Resources */,
 			);
@@ -226,7 +244,9 @@
 				FEDB8CF72A742DA100983670 /* LoanViewController.swift in Sources */,
 				FE48CB612A735F740010F866 /* ViewController.swift in Sources */,
 				FEF555CF2A7605F0002DB837 /* CompoundDataHistory+CoreDataClass.swift in Sources */,
+				FE751B8E2A7630380021881D /* CalculationHistoryViewController.swift in Sources */,
 				FE48CB5D2A735F740010F866 /* AppDelegate.swift in Sources */,
+				FE751B912A7636E80021881D /* CompoundHstoryTableViewCell.swift in Sources */,
 				FE48CB5F2A735F740010F866 /* SceneDelegate.swift in Sources */,
 				FEF555D02A7605F0002DB837 /* CompoundDataHistory+CoreDataProperties.swift in Sources */,
 			);

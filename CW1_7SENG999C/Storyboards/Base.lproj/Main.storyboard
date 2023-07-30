@@ -43,7 +43,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-RY-0Qz">
-                                        <rect key="frame" x="0.0" y="125" width="430" height="215"/>
+                                        <rect key="frame" x="0.0" y="125" width="430" height="330"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qKm-Ub-UfM">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="100"/>
@@ -77,11 +77,11 @@
                                                             <outletCollection property="gestureRecognizers" destination="bkN-my-HD4" appends="YES" id="T9M-Uj-LLO"/>
                                                         </connections>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-wj-tPy">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="history" translatesAutoresizingMaskIntoConstraints="NO" id="nGe-Qu-y1H">
                                                         <rect key="frame" x="220" y="0.0" width="210" height="100"/>
                                                         <gestureRecognizers/>
                                                         <connections>
-                                                            <outletCollection property="gestureRecognizers" destination="A9z-uG-nTq" appends="YES" id="jp1-Vk-xY8"/>
+                                                            <outletCollection property="gestureRecognizers" destination="kx9-me-AB8" appends="YES" id="oZV-Ls-xat"/>
                                                         </connections>
                                                     </imageView>
                                                 </subviews>
@@ -89,14 +89,28 @@
                                                     <constraint firstAttribute="height" constant="100" id="7VL-g1-BAo"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-d5-TpG">
+                                                <rect key="frame" x="0.0" y="230" width="430" height="100"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="oDR-8e-WY8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="430" height="100"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="zIA-2d-abt" appends="YES" id="tiK-Tu-T1B"/>
+                                                        </connections>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="fat-cw-rKI"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="215" id="9K3-uR-k7n"/>
-                                            <constraint firstAttribute="height" constant="215" id="F8k-UY-wbS"/>
+                                            <constraint firstAttribute="height" constant="330" id="Ak2-Fh-zcU"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cJJ-oj-6OK">
-                                        <rect key="frame" x="0.0" y="365" width="430" height="533"/>
+                                        <rect key="frame" x="0.0" y="480" width="430" height="418"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -125,7 +139,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="compoundLoanSavingImg" destination="4j7-Oj-z0U" id="VHL-Sb-pZj"/>
-                        <outlet property="helpImg" destination="KfW-wj-tPy" id="sFE-F6-4Ky"/>
+                        <outlet property="helpImg" destination="oDR-8e-WY8" id="8wA-H6-9kJ"/>
+                        <outlet property="historyImg" destination="nGe-Qu-y1H" id="NGh-hS-aeg"/>
                         <outlet property="mortgageImg" destination="yWU-Eb-u6f" id="Wum-7K-IbB"/>
                         <outlet property="savingsImg" destination="fhg-5P-FvA" id="zoh-6I-hPM"/>
                     </connections>
@@ -146,9 +161,14 @@
                         <segue destination="ZNR-DE-RwU" kind="show" identifier="Savings" id="sLi-jg-d4Q"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="A9z-uG-nTq" userLabel="Help Tap Gesture Recognizer">
+                <tapGestureRecognizer id="zIA-2d-abt" userLabel="Help Tap Gesture Recognizer">
                     <connections>
-                        <segue destination="CJt-Yx-nQw" kind="showDetail" identifier="Help" id="AHx-3f-4VX"/>
+                        <segue destination="CJt-Yx-nQw" kind="showDetail" id="nZy-X5-jo1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kx9-me-AB8">
+                    <connections>
+                        <segue destination="ZNR-DE-RwU" kind="show" identifier="CalculationHistory" id="fxG-ef-ag0"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -194,10 +214,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="u55-IM-VJv"/>
+        <segue reference="fxG-ef-ag0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="help" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="history" width="24" height="24"/>
         <image name="loan" width="128" height="128"/>
         <image name="mortgage" width="122.8795166015625" height="122.8795166015625"/>
         <image name="savings" width="170.66667175292969" height="170.66667175292969"/>

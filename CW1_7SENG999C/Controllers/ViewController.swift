@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var compoundLoanSavingImg: UIImageView!
     @IBOutlet weak var mortgageImg: UIImageView!
     @IBOutlet weak var savingsImg: UIImageView!
+    @IBOutlet weak var historyImg: UIImageView!
     @IBOutlet weak var helpImg: UIImageView!
     
     override func viewDidLoad() {
@@ -38,6 +39,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         helpImg.alpha = 0
         UIView.animate(withDuration: 1.5, animations: {
             self.helpImg.alpha = 1
+        })
+        
+        historyImg.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: {
+            self.historyImg.alpha = 1
         })
     }
     
