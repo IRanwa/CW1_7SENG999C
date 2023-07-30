@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MortgageHelpViewController: UIPageViewController {
+class MortgageHelpViewController: UIViewController {
 
     @IBOutlet weak var textAreaLbl: UITextView!
     override func viewDidLoad() {

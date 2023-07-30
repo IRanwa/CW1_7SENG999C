@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoanHelpViewController: UIPageViewController {
+class LoanHelpViewController: UIViewController {
 
     
     @IBOutlet weak var loanTextAreaLbl: UITextView!
